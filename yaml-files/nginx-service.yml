@@ -1,0 +1,39 @@
+# # Choose apiversion and kind
+# apiVersion: v1
+# kind: Service
+
+# metadata:
+#   name: nginx-deplyment
+#   namespace: default
+
+# specs:
+#   ports:
+#   - nodePort: 30442
+#     port: 80
+#     protocl: TCP
+#     targetPort: 80
+
+#   selector:
+#     app: nginx
+
+#   type: LoadBalancer
+
+
+# Copped from VMitre (and edited during the day)
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+  namespace: default
+
+spec: 
+  ports:
+  - nodePort: 30555
+    port: 80
+    protocol: TCP
+    targetPort: 80
+
+  selector:
+    app: nginx
+
+  type: LoadBalancer

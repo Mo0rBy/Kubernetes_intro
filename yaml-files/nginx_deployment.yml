@@ -1,0 +1,48 @@
+# # Need to declare the API version and the kind of service/component
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: nginx-deployment # Naming the deployment
+
+# spec:   # Need to add specifications to the deployment (ports, labels etc)
+#   selector:
+#     matchLabels:
+#       app: nginx    # Look for this label to match with k8 service
+
+#   replicas: 2       # Create a replica set of this with 3 instances/pods
+
+#   template:         # Template to use is it's label for the K8 service to launch in the browser
+#     metadata:
+#       labels:
+#         app: nginx  # This lagbel connects to the service or any other
+
+#     spec:
+#       containers:
+#       - name: nginx
+#         image: ahskhan/eng89automatednginx:latest    # Downloads from DockorHub if not on Localhost
+#         ports:
+#         - containerPort: 80
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+
+spec: 
+  selector: 
+    matchLabels: 
+      app: nginx
+
+  replicas: 2
+
+  template: 
+    metadata:
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+      - name: nginx
+        image: vimitre/sre_customised_nginx:latest
+        ports:
+        - containerPort: 80
