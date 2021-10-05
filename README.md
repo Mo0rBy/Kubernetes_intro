@@ -50,3 +50,11 @@ Use "Labels" to tell the Service what deployment to connect to.
 `kubectl delete namespace <name>`
 
 ![](diagram-task.PNG)
+
+
+
+Create deploy and service for mongo
+create Persistent Volume (PV) and Persistent Volume Claim (PVC)
+connect the app to the db
+
+First create a diagram --> then code it
